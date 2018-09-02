@@ -6,7 +6,53 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Sterling/Desktop/Algo Programs/Lab1/main.cpp
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.cpp
+sstream
+-
+Algorithm.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h
 iostream
+-
+vector
+-
+fstream
+-
+iostream
+-
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Sort.cpp
+Sort.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Sort.h
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Sort.h
+Algorithm.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/SortingAlgorithm.cpp
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/SortingAlgorithm.h
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/SortingAlgorithm.h
+iostream
+-
+vector
+-
+Algorithm.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h
+
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/main.cpp
+vector
+-
+Algorithm.h
+C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
 -
 

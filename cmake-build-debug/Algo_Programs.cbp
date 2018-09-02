@@ -80,6 +80,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.cpp">
+			<Option target="Algo_Programs"/>
+		</Unit>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/Algorithm.h">
+			<Option target="Algo_Programs"/>
+		</Unit>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/Sort.cpp">
+			<Option target="Algo_Programs"/>
+		</Unit>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/Sort.h">
+			<Option target="Algo_Programs"/>
+		</Unit>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/SortingAlgorithm.cpp">
+			<Option target="Algo_Programs"/>
+		</Unit>
+		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/SortingAlgorithm.h">
+			<Option target="Algo_Programs"/>
+		</Unit>
 		<Unit filename="C:/Users/Sterling/Desktop/Algo Programs/Lab1/main.cpp">
 			<Option target="Algo_Programs"/>
 		</Unit>

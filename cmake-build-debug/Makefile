@@ -122,6 +122,87 @@ Algo_Programs/fast:
 	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/build
 .PHONY : Algo_Programs/fast
 
+Algorithm.obj: Algorithm.cpp.obj
+
+.PHONY : Algorithm.obj
+
+# target to build an object file
+Algorithm.cpp.obj:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj
+.PHONY : Algorithm.cpp.obj
+
+Algorithm.i: Algorithm.cpp.i
+
+.PHONY : Algorithm.i
+
+# target to preprocess a source file
+Algorithm.cpp.i:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Algorithm.cpp.i
+.PHONY : Algorithm.cpp.i
+
+Algorithm.s: Algorithm.cpp.s
+
+.PHONY : Algorithm.s
+
+# target to generate assembly for a file
+Algorithm.cpp.s:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Algorithm.cpp.s
+.PHONY : Algorithm.cpp.s
+
+Sort.obj: Sort.cpp.obj
+
+.PHONY : Sort.obj
+
+# target to build an object file
+Sort.cpp.obj:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Sort.cpp.obj
+.PHONY : Sort.cpp.obj
+
+Sort.i: Sort.cpp.i
+
+.PHONY : Sort.i
+
+# target to preprocess a source file
+Sort.cpp.i:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Sort.cpp.i
+.PHONY : Sort.cpp.i
+
+Sort.s: Sort.cpp.s
+
+.PHONY : Sort.s
+
+# target to generate assembly for a file
+Sort.cpp.s:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Sort.cpp.s
+.PHONY : Sort.cpp.s
+
+SortingAlgorithm.obj: SortingAlgorithm.cpp.obj
+
+.PHONY : SortingAlgorithm.obj
+
+# target to build an object file
+SortingAlgorithm.cpp.obj:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj
+.PHONY : SortingAlgorithm.cpp.obj
+
+SortingAlgorithm.i: SortingAlgorithm.cpp.i
+
+.PHONY : SortingAlgorithm.i
+
+# target to preprocess a source file
+SortingAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.i
+.PHONY : SortingAlgorithm.cpp.i
+
+SortingAlgorithm.s: SortingAlgorithm.cpp.s
+
+.PHONY : SortingAlgorithm.s
+
+# target to generate assembly for a file
+SortingAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.s
+.PHONY : SortingAlgorithm.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +239,15 @@ help:
 	@echo ... Algo_Programs
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Algorithm.obj
+	@echo ... Algorithm.i
+	@echo ... Algorithm.s
+	@echo ... Sort.obj
+	@echo ... Sort.i
+	@echo ... Sort.s
+	@echo ... SortingAlgorithm.obj
+	@echo ... SortingAlgorithm.i
+	@echo ... SortingAlgorithm.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

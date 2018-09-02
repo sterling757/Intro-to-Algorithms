@@ -80,19 +80,97 @@ CMakeFiles/Algo_Programs.dir/main.cpp.obj.provides: CMakeFiles/Algo_Programs.dir
 CMakeFiles/Algo_Programs.dir/main.cpp.obj.provides.build: CMakeFiles/Algo_Programs.dir/main.cpp.obj
 
 
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj: CMakeFiles/Algo_Programs.dir/flags.make
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj: ../Algorithm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sterling\Desktop\Algo Programs\Lab1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj"
+	C:\MinGw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Algo_Programs.dir\Algorithm.cpp.obj -c "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Algorithm.cpp"
+
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algo_Programs.dir/Algorithm.cpp.i"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Algorithm.cpp" > CMakeFiles\Algo_Programs.dir\Algorithm.cpp.i
+
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algo_Programs.dir/Algorithm.cpp.s"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Algorithm.cpp" -o CMakeFiles\Algo_Programs.dir\Algorithm.cpp.s
+
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.requires
+
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.provides: CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.provides.build
+.PHONY : CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.provides
+
+CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.provides.build: CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj
+
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj: CMakeFiles/Algo_Programs.dir/flags.make
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj: ../SortingAlgorithm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sterling\Desktop\Algo Programs\Lab1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj"
+	C:\MinGw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Algo_Programs.dir\SortingAlgorithm.cpp.obj -c "C:\Users\Sterling\Desktop\Algo Programs\Lab1\SortingAlgorithm.cpp"
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.i"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sterling\Desktop\Algo Programs\Lab1\SortingAlgorithm.cpp" > CMakeFiles\Algo_Programs.dir\SortingAlgorithm.cpp.i
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.s"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sterling\Desktop\Algo Programs\Lab1\SortingAlgorithm.cpp" -o CMakeFiles\Algo_Programs.dir\SortingAlgorithm.cpp.s
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.requires
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.provides: CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.provides.build
+.PHONY : CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.provides
+
+CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.provides.build: CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj
+
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.obj: CMakeFiles/Algo_Programs.dir/flags.make
+CMakeFiles/Algo_Programs.dir/Sort.cpp.obj: ../Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Sterling\Desktop\Algo Programs\Lab1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Algo_Programs.dir/Sort.cpp.obj"
+	C:\MinGw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Algo_Programs.dir\Sort.cpp.obj -c "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Sort.cpp"
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algo_Programs.dir/Sort.cpp.i"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Sort.cpp" > CMakeFiles\Algo_Programs.dir\Sort.cpp.i
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algo_Programs.dir/Sort.cpp.s"
+	C:\MinGw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Sterling\Desktop\Algo Programs\Lab1\Sort.cpp" -o CMakeFiles\Algo_Programs.dir\Sort.cpp.s
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.requires:
+
+.PHONY : CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.requires
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.provides: CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\Algo_Programs.dir\build.make CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.provides.build
+.PHONY : CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.provides
+
+CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.provides.build: CMakeFiles/Algo_Programs.dir/Sort.cpp.obj
+
+
 # Object files for target Algo_Programs
 Algo_Programs_OBJECTS = \
-"CMakeFiles/Algo_Programs.dir/main.cpp.obj"
+"CMakeFiles/Algo_Programs.dir/main.cpp.obj" \
+"CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj" \
+"CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj" \
+"CMakeFiles/Algo_Programs.dir/Sort.cpp.obj"
 
 # External object files for target Algo_Programs
 Algo_Programs_EXTERNAL_OBJECTS =
 
 Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/main.cpp.obj
+Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj
+Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj
+Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/Sort.cpp.obj
 Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/build.make
 Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/linklibs.rsp
 Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/objects1.rsp
 Algo_Programs.exe: CMakeFiles/Algo_Programs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Sterling\Desktop\Algo Programs\Lab1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Algo_Programs.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Sterling\Desktop\Algo Programs\Lab1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Algo_Programs.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Algo_Programs.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -101,6 +179,9 @@ CMakeFiles/Algo_Programs.dir/build: Algo_Programs.exe
 .PHONY : CMakeFiles/Algo_Programs.dir/build
 
 CMakeFiles/Algo_Programs.dir/requires: CMakeFiles/Algo_Programs.dir/main.cpp.obj.requires
+CMakeFiles/Algo_Programs.dir/requires: CMakeFiles/Algo_Programs.dir/Algorithm.cpp.obj.requires
+CMakeFiles/Algo_Programs.dir/requires: CMakeFiles/Algo_Programs.dir/SortingAlgorithm.cpp.obj.requires
+CMakeFiles/Algo_Programs.dir/requires: CMakeFiles/Algo_Programs.dir/Sort.cpp.obj.requires
 
 .PHONY : CMakeFiles/Algo_Programs.dir/requires
 
