@@ -14,7 +14,7 @@ int main() {
 
     Algorithm Search;
 
-    string pathToSort = "C:\\Users\\Sterling\\Desktop\\Algo Programs\\Lab1\\Data_To_Sort.txt";
+    string pathToSort = "C:\\Users\\Sterling\\Desktop\\Algo Programs\\Lab1\\Data_Sets.txt";
 
     Search.Load(pathToSort);
 

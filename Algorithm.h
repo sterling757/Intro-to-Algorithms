@@ -23,8 +23,9 @@ public:
 
 
 private:
-    vector<vector<int>> numsToBeSorted;
+
     vector<int> rowOfNums;
+    vector<vector<int>> nums;
 
 };
 

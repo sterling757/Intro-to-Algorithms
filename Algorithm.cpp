@@ -9,33 +9,30 @@
 
 void Algorithm::Load(string filePath) {
 
-    ifstream myfile (filePath);
     string line;
-    int count =0;
-    if (myfile.is_open())
+    ifstream myFile (filePath);
+    if (myFile.is_open())
     {
-        while ( getline (myfile,line) )
+        while ( getline (myFile,line) )
         {
+            rowOfNums.clear();
+
             istringstream is(line);
             int n;
-            while(is >> n){
+            while(is >> n) {
+
                 rowOfNums.push_back(n);
 
+
             }
-            numsToBeSorted[count] = rowOfNums;
-            rowOfNums.clear();
-            count++;
+            nums.push_back(rowOfNums);
+
         }
-        myfile.close();
+        myFile.close();
+
     }
 
     else
         cout << "Unable to open file";
-
-
-
-
-
-
-
+    
 }
