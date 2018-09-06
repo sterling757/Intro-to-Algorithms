@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
-project(Algo_Programs)
+project(lab1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Algo_Programs main.cpp Algorithm.cpp Algorithm.h SortingAlgorithm.cpp SortingAlgorithm.h Sort.cpp Sort.h)
+add_executable(lab1 main.cpp Algorithm.h SortingAlgorithm.cpp SortingAlgorithm.h BubbleSort.cpp MergeSort.cpp MergeSort.h InsertionSort.cpp InsertionSort.h BubbleSort.h)
