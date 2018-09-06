@@ -6,7 +6,17 @@
 #define LAB1_MERGESORT_H
 
 
-class MergeSort {
+#include "SortingAlgorithm.h"
+
+class MergeSort : public SortingAlgorithm{
+
+public:
+
+    MergeSort();
+    void Sort(vector<int>&);
+    void Merge(vector<int>&, vector<int>&, vector<int>&);
+
+private:
 
 
 };

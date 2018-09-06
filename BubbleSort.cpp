@@ -9,6 +9,11 @@ BubbleSort::BubbleSort() {}
 
 void BubbleSort::Sort(vector<int>& numsToSort) {
 
+    if (numsToSort.size() <= 1) {
+        cout << "You have no numbers to sort" << endl;
+        return;
+    }
+
     switchNum = true;
     while(switchNum) {
 

@@ -5,6 +5,8 @@
 
 #include "SortingAlgorithm.h"
 #include "BubbleSort.h"
+#include "InsertionSort.h"
+#include "MergeSort.h"
 
 SortingAlgorithm::SortingAlgorithm() {
 
@@ -38,7 +40,6 @@ void SortingAlgorithm::Load(string filePath) {
         cout << "Unable to open file";
 
 
-
 }
 
 void SortingAlgorithm::Execute(int algoId) {
@@ -47,29 +48,34 @@ void SortingAlgorithm::Execute(int algoId) {
     if(algoId == 0){
         BubbleSort bs;
 
-
         for (int i = 0; i < nums.size(); i++) {
 
-                bs.Sort(nums[i]);
+            bs.Sort(nums[i]);
 
         }
 
     }
-    else if(algoId == 1){
 
-//        for (int i = 0; i < nums.size(); i++) {
-//
-//            bs.Sort(nums[i]);
-//
-//        }
+    else if(algoId == 1){
+        InsertionSort is;
+        for (int i = 0; i < nums.size(); i++) {
+
+            is.Sort(nums[i]);
+
+        }
 
     }
+
     else if(algoId == 2){
+        MergeSort ms;
+        for (int i = 0; i < nums.size(); i++) {
+
+            ms.Sort(nums[i]);
+        }
 
     }
     else
         cerr << "something went wrong somehow, index out of bounds!" << endl;
-
 
     Display();
     //Save();
@@ -83,6 +89,7 @@ void SortingAlgorithm::Display(){
         for (int j = 0; j < nums[i].size(); j++) {
             cout << nums[i][j] << " ";
         }
+
         cout << '\n';
     }
 

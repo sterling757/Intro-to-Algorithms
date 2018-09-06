@@ -1,5 +1,6 @@
 
 #include "SortingAlgorithm.h"
+#include "Algorithm.h"
 
 
 
@@ -8,19 +9,19 @@ using namespace std;
 
 int main() {
 
-    SortingAlgorithm Search ;
+    Algorithm* algo = new SortingAlgorithm();
 
-    string pathToSort = "C:\\Users\\Sterling\\Desktop\\lab1\\Data_Sets.txt";
+    string pathToSort = "Data_Sets.txt";
 
-    Search.Load(pathToSort);
+    algo->Load(pathToSort);
+    for(int i = 0; i < 3; i++) {
 
-    //passing i as the algo ID
-    Search.Execute(0);
+            //passing i as the algo ID
+            algo->Execute(i);
 
-    //Search.Stats();
+            //Search.Stats();
 
-
-
+    }
     return 0;
 
 

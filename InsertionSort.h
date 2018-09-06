@@ -9,8 +9,14 @@
 
 class InsertionSort : public SortingAlgorithm {
 
+public:
+
     InsertionSort();
     void Sort(vector<int>&);
+
+private:
+
+    int tmp;
 
 };
 
