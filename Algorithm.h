@@ -19,7 +19,7 @@ public:
     virtual void Display() = 0; //Prints solution to screen
     virtual void Stats() = 0 ; //Prints algorithm name, execution time and number of records analyzed to screen in readable format
     virtual void Select(int) = 0; //enum or int or id passed as input and loads corresponding algorithm to interface
-    virtual void Save() = 0; //[Saves solution to file path given as input]
+    virtual void Save(string) = 0; //[Saves solution to file path given as input]
     virtual void Configure() = 0; //Future Expandability
 
 };

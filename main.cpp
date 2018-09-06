@@ -1,6 +1,7 @@
 
 #include "SortingAlgorithm.h"
 #include "Algorithm.h"
+#include <chrono>
 
 
 
@@ -9,22 +10,27 @@ using namespace std;
 
 int main() {
 
-    Algorithm* algo = new SortingAlgorithm();
+
+    Algorithm *algo = new SortingAlgorithm();
 
     string pathToSort = "Data_Sets.txt";
 
     algo->Load(pathToSort);
-    for(int i = 0; i < 3; i++) {
 
-            //passing i as the algo ID
-            algo->Execute(i);
+    for (int i = 0; i < 3; i++) {
 
-            //Search.Stats();
+        algo->Execute(i);
 
     }
+
+    string outPath = "results.txt";
+    algo->Save(outPath);
     return 0;
 
-
 }
+
+
+
+
 
 
