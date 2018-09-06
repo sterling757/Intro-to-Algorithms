@@ -22,13 +22,11 @@ public:
     void Select(int) override; //enum or int or id passed as input and loads corresponding algorithm to interface
     void Save() override;
     void Configure() override; //Future Expandability
-
-private:
-
     vector<int> rowOfNums;
 
     //holds vectors of each row to be sorted. nums[0] = first row of txt file
     vector<vector<int>> nums;
+
 
 };
 
