@@ -7,7 +7,7 @@
 #include "BubbleSort.h"
 #include "InsertionSort.h"
 #include "MergeSort.h"
-
+#include <chrono>
 SortingAlgorithm::SortingAlgorithm() {
 
 }
@@ -48,12 +48,18 @@ void SortingAlgorithm::Execute(int algoId) {
     if(algoId == 0){
         BubbleSort bs;
 
+        cout << "Sorting..." << endl;
+        std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+
         for (int i = 0; i < nums.size(); i++) {
 
             bs.Sort(nums[i]);
 
         }
 
+        std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();
+        std::cout << duration << " milliseconds" << endl;
     }
 
     else if(algoId == 1){
@@ -101,6 +107,8 @@ void SortingAlgorithm::Stats(){
 
 
 }
+
+//When using Select, input 1
 void SortingAlgorithm::Select(int algoId){
 
 
