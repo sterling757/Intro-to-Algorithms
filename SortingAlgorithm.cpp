@@ -49,24 +49,32 @@ void SortingAlgorithm::Execute(int algoId) {
         BubbleSort bs;
 
         cout << "Sorting..." << endl;
-        std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+        auto start = std::chrono::high_resolution_clock::now();
 
         for (int i = 0; i < nums.size(); i++) {
 
             bs.Sort(nums[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( end - start ).count();
+            std::cout << "Duration for Bubble Sort of Data Set of Size: " << nums[i].size() << " = " << duration << " milliseconds" << endl;
 
         }
 
-        std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();
-        std::cout << duration << " milliseconds" << endl;
+
+
     }
 
     else if(algoId == 1){
         InsertionSort is;
+
+        auto start = std::chrono::high_resolution_clock::now();
+
         for (int i = 0; i < nums.size(); i++) {
 
             is.Sort(nums[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( end - start ).count();
+            std::cout << "Duration for Insertion Sort of Data Set of Size: " << nums[i].size() << " = " << duration << " milliseconds" << endl;
 
         }
 
@@ -74,9 +82,14 @@ void SortingAlgorithm::Execute(int algoId) {
 
     else if(algoId == 2){
         MergeSort ms;
+
+        auto start = std::chrono::high_resolution_clock::now();
         for (int i = 0; i < nums.size(); i++) {
 
             ms.Sort(nums[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>( end - start ).count();
+            std::cout << "Duration for Merge Sort of Data Set of Size: " << nums[i].size() << " = " << duration << " milliseconds" << endl;
         }
 
     }
