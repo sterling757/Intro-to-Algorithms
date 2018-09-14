@@ -1,4 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2017.3.4\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=C:/MinGw/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" "C:\Users\Sterling\Desktop\Algo Programs\Lab1"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Sterling/Desktop/Algo Programs/Lab1/cmake-build-debug

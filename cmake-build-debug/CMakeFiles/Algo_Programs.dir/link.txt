@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2017.3.4\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Algo_Programs.dir/objects.a
-C:\MinGw\bin\ar.exe cr CMakeFiles\Algo_Programs.dir/objects.a @CMakeFiles\Algo_Programs.dir\objects1.rsp
-C:\MinGw\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Algo_Programs.dir/objects.a -Wl,--no-whole-archive  -o Algo_Programs.exe -Wl,--out-implib,libAlgo_Programs.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Algo_Programs.dir\linklibs.rsp
