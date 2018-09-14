@@ -1,0 +1,66 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Sterling/Desktop/Algo Lab 2/Algorithm.h
+iostream
+-
+vector
+-
+fstream
+-
+sstream
+-
+
+C:/Users/Sterling/Desktop/Algo Lab 2/BubbleSort.cpp
+BubbleSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/BubbleSort.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/BubbleSort.h
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/InsertionSort.cpp
+InsertionSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/InsertionSort.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/InsertionSort.h
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/MergeSort.cpp
+MergeSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/MergeSort.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/MergeSort.h
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.cpp
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+BubbleSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/BubbleSort.h
+InsertionSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/InsertionSort.h
+MergeSort.h
+C:/Users/Sterling/Desktop/Algo Lab 2/MergeSort.h
+chrono
+-
+
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+Algorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/Algorithm.h
+chrono
+-
+
+C:/Users/Sterling/Desktop/Algo Lab 2/main.cpp
+SortingAlgorithm.h
+C:/Users/Sterling/Desktop/Algo Lab 2/SortingAlgorithm.h
+chrono
+-
+
