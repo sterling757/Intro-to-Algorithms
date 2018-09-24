@@ -60,6 +60,15 @@ void BuildGraph::addWeight(int start, int dest, int weight){
 
 }
 
+void BuildGraph::addPositions(int node, int x, int y, int z){
+
+        adjacencyList[node].xPos = x;
+        adjacencyList[node].yPos = y;
+        adjacencyList[node].zPos = z;
+
+
+}
+
 BuildGraph::vertex* BuildGraph::addVertex(int node){
 
     struct vertex* newNode = new vertex;

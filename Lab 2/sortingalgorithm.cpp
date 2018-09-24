@@ -10,14 +10,14 @@
 #include <chrono>
 #include <typeinfo>
 
-void SortingAlgorithm::Load(string graphFileName, string weightsFileName) {
+void SortingAlgorithm::Load(string graphFileName, string weightsFileName, string positionsFileName) {
 
-    LoadGraph(graphFileName, weightsFileName);
+    LoadAdjListGraph(graphFileName, weightsFileName, positionsFileName);
 
 
 }
 
-void SortingAlgorithm::LoadGraph(string graphFileName, string weightPath) {
+void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath, string postionsPath) {
 
     string line;
     int startNode = 0;
@@ -81,6 +81,7 @@ void SortingAlgorithm::LoadGraph(string graphFileName, string weightPath) {
 
     //freeing up allocated memory
 
+    //opens and reads weights
     ifstream weightFile(weightPath);
 
     string originalNode;
@@ -100,6 +101,33 @@ void SortingAlgorithm::LoadGraph(string graphFileName, string weightPath) {
            b->addWeight(start, end, w);
 
     }
+    weightFile.close();
+
+    //opens and reads positions(x,y,z)
+    ifstream positionFile(postionsPath);
+
+    string node;
+    string xPos;
+    string yPos;
+    string zPos;
+    while(positionFile.is_open() && (!positionFile.eof())){
+
+        getline(positionFile, node, ',');
+        getline(positionFile, xPos, ',');
+        getline(positionFile, yPos, ',');
+        getline(positionFile, zPos, '\n');
+
+        int n = stoi(node);
+        int x = stoi(xPos);
+        int y = stoi(yPos);
+        int z = stoi(zPos);
+
+        b->addPositions(n, x, y, z);
+
+    }
+    positionFile.close();
+
+
 
 }
 

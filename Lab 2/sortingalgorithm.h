@@ -23,7 +23,7 @@ class SortingAlgorithm : public Algorithm{
 public:
 
     SortingAlgorithm(){};
-    void Load(string, string) override;
+    void Load(string, string, string) override;
     void Execute(int) override;
     void Display() override; //Prints solution to screen
     void Stats() override; //Prints algorithm name, execution time and number of records analyzed to screen in readable format
@@ -49,7 +49,7 @@ public:
 
 private:
 
-    void LoadGraph(string, string);
+    void LoadAdjListGraph(string, string, string);
 
     //builder
 //    Configuration executionType;

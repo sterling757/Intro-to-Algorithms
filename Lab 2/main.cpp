@@ -13,8 +13,9 @@ int main(int argc, char *argv[]) {
     Algorithm *algo = new SortingAlgorithm();
     string graphFileName = "/home/coder/Desktop/lab22/graph.txt";
     string weightFileName = "/home/coder/Desktop/lab22/weights.txt";
+    string positionFileName = "/home/coder/Desktop/lab22/positions.txt";
     if (argc == 1) {
-        algo->Load(graphFileName, weightFileName);
+        algo->Load(graphFileName, weightFileName, positionFileName);
 
     }
 

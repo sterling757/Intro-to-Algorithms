@@ -18,7 +18,7 @@ class Algorithm {
 
 public:
     Algorithm(){};
-    virtual void Load(string, string) =0; //Takes a filename as and can read input data file
+    virtual void Load(string, string, string) =0; //Takes a filename as and can read input data file
     virtual void Execute(int) = 0; //Executes the search algorithm
     virtual void Display() = 0; //Prints solution to screen
     virtual void Stats() = 0 ; //Prints algorithm name, execution time and number of records analyzed to screen in readable format

@@ -10,11 +10,15 @@ class BuildGraph
             bool visited;
             int weight;
             int data;
+
             struct vertex* next;
         };
 
         struct adjList{
             struct vertex *head;
+            int xPos;
+            int yPos;
+            int zPos;
         };
 
         int numOfVerts;
@@ -29,6 +33,7 @@ class BuildGraph
         vertex* addVertex(int);
         void addEdge(int, int);
         void addWeight(int, int, int);
+        void addPositions(int, int, int, int);
         void printAdjList();
 
 
