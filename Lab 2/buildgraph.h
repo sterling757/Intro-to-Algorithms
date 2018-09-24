@@ -19,6 +19,7 @@ class BuildGraph
 
         int numOfVerts;
         bool visitedNodes[100];
+
         vector<adjList> adjacencyList;
 
     public:
@@ -27,6 +28,7 @@ class BuildGraph
         BuildGraph(int vertices);
         vertex* addVertex(int);
         void addEdge(int, int);
+        void addWeight(int, int, int);
         void printAdjList();
 
 

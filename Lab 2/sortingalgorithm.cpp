@@ -8,15 +8,16 @@
 #include "insertionsort.h"
 #include "mergesort.h"
 #include <chrono>
+#include <typeinfo>
 
 void SortingAlgorithm::Load(string graphFileName, string weightsFileName) {
 
-    LoadNodes(graphFileName);
-    LoadWeights(weightsFileName);
+    LoadGraph(graphFileName, weightsFileName);
+
 
 }
 
-void SortingAlgorithm::LoadNodes(string graphFileName) {
+void SortingAlgorithm::LoadGraph(string graphFileName, string weightPath) {
 
     string line;
     int startNode = 0;
@@ -31,7 +32,7 @@ void SortingAlgorithm::LoadNodes(string graphFileName) {
         vertCount++;
     }
 
-    BuildGraph* b = new BuildGraph(vertCount);
+    BuildGraph* b = new BuildGraph(vertCount+1);
 
     graphFile.close();
     //cout << vertCount << endl;
@@ -41,7 +42,7 @@ void SortingAlgorithm::LoadNodes(string graphFileName) {
 
     if (graphFile2.is_open())
     {
-        while (vertCount > 1)
+        while (vertCount > 0)
         {
 
             getline(graphFile2, line, ',');
@@ -75,32 +76,30 @@ void SortingAlgorithm::LoadNodes(string graphFileName) {
     else
         cout << "Unable to open file";
 
+    //just for testing
     b->printAdjList();
 
-}
+    //freeing up allocated memory
 
-void SortingAlgorithm::LoadWeights(string weightPath){
+    ifstream weightFile(weightPath);
 
-     ifstream weightFile(weightPath);
+    string originalNode;
+    string destinationNode;
+    string weight;
 
-     string originalNode;
-     string destinationNode;
-     string weight;
-     while(weightFile.is_open() && (!weightFile.eof())){
+    while(weightFile.is_open() && (!weightFile.eof())){
 
-            getline(weightFile, originalNode, ',');
-            getline(weightFile, destinationNode, ',');
-            getline(weightFile, weight, '\n');
+           getline(weightFile, originalNode, ',');
+           getline(weightFile, destinationNode, ',');
+           getline(weightFile, weight, '\n');
 
-//            int start = atoi(originalNode);
-//            int end = atoi(destinationNode);
-//            int w = atoi(weight);
+           int start = stoi(originalNode);
+           int end = stoi(destinationNode);
+           int w = stoi(weight);
 
+           b->addWeight(start, end, w);
 
-
-     }
-
-
+    }
 
 }
 

@@ -10,6 +10,7 @@
 #define ALGO_PROGRAMS_SORTINGALGORITHM_H
 
 #include "algorithm.h"
+#include "buildgraph.h"
 
 #include <chrono>
 #include <list>
@@ -48,8 +49,8 @@ public:
 
 private:
 
-    void LoadNodes(string);
-    void LoadWeights(string);
+    void LoadGraph(string, string);
+
     //builder
 //    Configuration executionType;
 //    Configuration  storageType;

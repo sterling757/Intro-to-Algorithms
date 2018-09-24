@@ -42,6 +42,24 @@ void BuildGraph::addEdge(int index, int destNode){
     adjacencyList[destNode].head = newVertex;
 }
 
+void BuildGraph::addWeight(int start, int dest, int weight){
+
+
+        //go though node to find the connection to add weight
+        struct vertex* current = adjacencyList[start].head;
+
+        while(current != nullptr){
+            if(current->data == dest){
+                current->weight = weight;
+                current= current->next;
+            }
+
+            else
+                current= current->next;
+        }
+
+}
+
 BuildGraph::vertex* BuildGraph::addVertex(int node){
 
     struct vertex* newNode = new vertex;
@@ -55,13 +73,17 @@ BuildGraph::vertex* BuildGraph::addVertex(int node){
 }
 
 void BuildGraph::printAdjList(){
+
     for(int i = 0; i < numOfVerts; i++){
+
         struct vertex* current = adjacencyList[i].head;
         cout << "Vertex: " << i << endl;
+
         while(current != nullptr){
             cout << "->" << current->data;
             current= current->next;
         }
+
         cout << endl;
 
     }
