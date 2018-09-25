@@ -2,14 +2,19 @@
 // Created by Sterling on 8/26/2018.
 //
 
-#include "buildgraph.h"
-#include "sortingalgorithm.h"
-#include "bubblesort.h"
-#include "insertionsort.h"
+
+
+#include "dfs.h"
+
 #include "mergesort.h"
 #include <chrono>
 #include <typeinfo>
 
+SortingAlgorithm::SortingAlgorithm(){
+
+}
+
+vector<BuildGraph::adjList> graph;
 void SortingAlgorithm::Load(string graphFileName, string weightsFileName, string positionsFileName) {
 
     LoadAdjListGraph(graphFileName, weightsFileName, positionsFileName);
@@ -31,8 +36,8 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
     while( getline(graphFile, ex, '\n')){
         vertCount++;
     }
-
-    BuildGraph* b = new BuildGraph(vertCount+1);
+    this->vCount = vertCount;
+    adjGraph = new BuildGraph(vertCount+1);
 
     graphFile.close();
     //cout << vertCount << endl;
@@ -59,7 +64,7 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
             int i;
             vector<int> nums;
             while(ss >> i){
-                b->addEdge(startNode, i);
+                adjGraph->addEdge(startNode, i);
                 if(ss.peek() == ','){
                     ss.ignore();
                 }
@@ -75,9 +80,6 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
 
     else
         cout << "Unable to open file";
-
-    //just for testing
-    b->printAdjList();
 
     //freeing up allocated memory
 
@@ -98,7 +100,7 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
            int end = stoi(destinationNode);
            int w = stoi(weight);
 
-           b->addWeight(start, end, w);
+           adjGraph->addWeight(start, end, w);
 
     }
     weightFile.close();
@@ -122,17 +124,44 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
         int y = stoi(yPos);
         int z = stoi(zPos);
 
-        b->addPositions(n, x, y, z);
+        adjGraph->addPositions(n, x, y, z);
 
     }
     positionFile.close();
 
-
-
+    //just for testing
+    adjGraph->printAdjList();
+    graph = adjGraph->adjacencyList;
 }
 
 void SortingAlgorithm::Execute(int algoId) {
 
+    //DFS Search
+
+    if(algoId == 0){
+
+            dfsSearch = new DFS(graph, vCount);
+            dfsSearch->DepthFirstSearch(0,2);
+//            for (int i = 0; i < nums.size(); i++) {
+
+//                auto start = std::chrono::high_resolution_clock::now();
+
+//                bs.Sort(nums[i]);
+
+//                auto end = std::chrono::high_resolution_clock::now();
+
+//                auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+//                int size = nums[i].size();
+
+//                pair <int,double> p (size,ms);
+
+//                statsStrings.push_back(p);
+
+//            }
+
+
+    }
 
 }
 
@@ -170,6 +199,10 @@ void SortingAlgorithm::Configure(){
 
 }
 
+SortingAlgorithm::~SortingAlgorithm(){
+    delete[] adjGraph;
+    delete[] dfsSearch;
+}
 //builder stuff
 //void SortingAlgorithm::setExecutionType(SortingAlgorithm::Configuration exe) {
 //    executionType = exe;
@@ -199,3 +232,4 @@ void SortingAlgorithm::Configure(){
 //Algorithm* SortingAlgorithm::Clone() {
 //    return new Sort(*this);
 //}
+

@@ -17,7 +17,7 @@ using namespace std;
 class Algorithm {
 
 public:
-    Algorithm(){};
+    Algorithm(){}
     virtual void Load(string, string, string) =0; //Takes a filename as and can read input data file
     virtual void Execute(int) = 0; //Executes the search algorithm
     virtual void Display() = 0; //Prints solution to screen

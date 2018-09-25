@@ -11,7 +11,6 @@
 
 #include "algorithm.h"
 #include "buildgraph.h"
-
 #include <chrono>
 #include <list>
 
@@ -22,7 +21,9 @@ class SortingAlgorithm : public Algorithm{
 
 public:
 
-    SortingAlgorithm(){};
+    SortingAlgorithm();
+    ~SortingAlgorithm();
+
     void Load(string, string, string) override;
     void Execute(int) override;
     void Display() override; //Prints solution to screen
@@ -47,10 +48,15 @@ public:
 
 
 
+protected:
+
+    int vCount;
+    class BuildGraph* adjGraph;
+    class DFS * dfsSearch;
+
+
 private:
-
     void LoadAdjListGraph(string, string, string);
-
     //builder
 //    Configuration executionType;
 //    Configuration  storageType;

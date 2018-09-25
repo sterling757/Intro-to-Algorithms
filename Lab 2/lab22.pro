@@ -4,19 +4,15 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    bubblesort.cpp \
-    insertionsort.cpp \
-    mergesort.cpp \
     sortingalgorithm.cpp \
-    buildgraph.cpp
+    buildgraph.cpp \
+    dfs.cpp
 
 HEADERS += \
     algorithm.h \
-    bubblesort.h \
-    insertionsort.h \
-    mergesort.h \
     sortingalgorithm.h \
-    buildgraph.h
+    buildgraph.h \
+    dfs.h
 
 
 DISTFILES += \

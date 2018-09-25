@@ -13,7 +13,7 @@ BuildGraph::BuildGraph(int vertices){
         //allocate space
         adjacencyList.push_back(adjList());
 
-        visitedNodes[i] = false;
+        //visitedNodes[i] = false;
 
     }
 
@@ -87,13 +87,20 @@ void BuildGraph::printAdjList(){
 
         struct vertex* current = adjacencyList[i].head;
         cout << "Vertex: " << i << endl;
+        cout << "Vertex Position (" << adjacencyList[i].xPos << "," << adjacencyList[i].yPos << "," << adjacencyList[i].zPos << ")" << endl;
 
         while(current != nullptr){
+
             cout << "->" << current->data;
             current= current->next;
+
         }
 
         cout << endl;
 
     }
+}
+BuildGraph::~BuildGraph(){
+    adjacencyList.clear();
+
 }
