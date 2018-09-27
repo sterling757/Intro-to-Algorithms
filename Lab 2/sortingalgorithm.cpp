@@ -389,14 +389,29 @@ void SortingAlgorithm::Select(int selector){
 void SortingAlgorithm::Save(){
 
 
-    ofstream out("paths.txt");
-    out << "PATH FOR ALGO: ";
-    for(int i = 0; i < path.size(); i++){
-           out << path[i] << "->";
+    ofstream outputFile("algoPaths.txt");
+    outputFile << "STATS FOR ALGO: ";
+    if(algoID == 0){
+        outputFile << "BFS" << endl;
     }
-    out << endl;
+    else if(algoID == 1){
+        outputFile << "DFS" << endl;
+    }
+    else if(algoID == 2){
+        outputFile << "DIJKSTRA" << endl;
+    }
+    else if(algoID == 3){
+        outputFile << "A*" << endl;
+    }
+    else
+        outputFile << "INVALID ALGO ID!" << endl;
 
-    out.close();
+    outputFile << "PATH: " ;
+    for(int i = 0; i < path.size(); i++){
+           outputFile << path[i] << " ";
+    }
+    outputFile << endl;
+
 
 }
 

@@ -20,8 +20,7 @@ int main(int argc, char *argv[]) {
             algo->Load();
             algo->Select(i);
             algo->Execute();
-            algo->Display();
-            algo->Save();
+            algo->stats();
 
         }
 
@@ -36,7 +35,7 @@ int main(int argc, char *argv[]) {
             algo->Load();
             algo->Select(i);
             algo->Execute(start, end);
-            algo->Display();
+            algo->stats();
 
         }
 
