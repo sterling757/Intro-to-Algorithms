@@ -4,8 +4,9 @@
 #include "sortingalgorithm.h"
 #include <map>
 
-struct graph{
-
+class BuildGraph{
+public:
+    BuildGraph(){}
     int name;
     vector<int> connections;
     map<int,int> weights;

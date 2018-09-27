@@ -16,6 +16,7 @@
 
 #include "bfs.h"
 #include "dfs.h"
+#include "dijkstra.h"
 using namespace std;
 
 class SortingAlgorithm : public Algorithm{
@@ -53,15 +54,16 @@ public:
 
 protected:
 
-    int vCount;
+    long int vCount;
     vector<int> w;
-    graph g;
-    vector<graph> adj;
+    BuildGraph* g;
+    vector<BuildGraph> adj;
 
 
 private:
     class BFS* bfs;
     class DFS* dfs;
+    class Dijkstra* dijk;
     void LoadAdjListGraph(string, string, string);
 
 };

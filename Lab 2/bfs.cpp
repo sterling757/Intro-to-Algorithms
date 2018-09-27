@@ -6,7 +6,7 @@ BFS::BFS()
 {
 
 }
-BFS::BFS(int num, vector<graph> vec){
+BFS::BFS(int num, vector<BuildGraph> vec){
     this->numOfNodes = num;
     this->adjToSearch = vec;
 }

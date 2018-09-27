@@ -6,14 +6,16 @@ CONFIG -= qt
 SOURCES += main.cpp \
     sortingalgorithm.cpp \
     dfs.cpp \
-    bfs.cpp
+    bfs.cpp \
+    dijkstra.cpp
 
 HEADERS += \
     algorithm.h \
     sortingalgorithm.h \
     buildgraph.h \
     dfs.h \
-    bfs.h
+    bfs.h \
+    dijkstra.h
 
 
 DISTFILES += \

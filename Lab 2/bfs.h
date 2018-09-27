@@ -9,16 +9,17 @@ class BFS
 {
 public:
     BFS();
-    BFS(int, vector<graph>);
-    vector<graph> adjToSearch;
-    int numOfNodes = 0;
-    void BFSSearch(int start, int end);
+
+    BFS(int, vector<class BuildGraph>);
+    vector<class BuildGraph> adjToSearch;
+    long int numOfNodes = 0;
+    void BFSSearch(int, int);
     int getCost(){
         return cost;
     }
 
 private:
-    int cost;
+    int cost = 0;
 };
 
 #endif // BFS_H

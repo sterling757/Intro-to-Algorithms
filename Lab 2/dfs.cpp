@@ -6,7 +6,7 @@ DFS::DFS()
 {
 
 }
-DFS::DFS(int num, vector<graph> vec){
+DFS::DFS(int num, vector<BuildGraph> vec){
     this->numOfNodes = num;
     this->adjToSearch = vec;
 }

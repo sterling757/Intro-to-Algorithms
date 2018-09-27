@@ -10,16 +10,16 @@ class DFS
 public:
 
     DFS();
-    DFS(int, vector<graph>);
-    vector<graph> adjToSearch;
-    int numOfNodes = 0;
-    void DFSSearch(int start, int end);
+    DFS(int, vector<BuildGraph>);
+    vector<BuildGraph> adjToSearch;
+    long int numOfNodes = 0;
+    void DFSSearch(int , int );
     int getCost(){
         return cost;
     }
 
 private:
-    int cost;
+    int cost = 0;
 };
 
 #endif // DFS_H

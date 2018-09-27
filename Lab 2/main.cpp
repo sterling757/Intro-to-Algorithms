@@ -14,21 +14,27 @@ int main(int argc, char *argv[]) {
     string graphFileName = "/home/coder/Desktop/lab22/graph.txt";
     string weightFileName = "/home/coder/Desktop/lab22/weights.txt";
     string positionFileName = "/home/coder/Desktop/lab22/positions.txt";
+
     if (argc == 1) {
         algo->Load(graphFileName, weightFileName, positionFileName);
+        cout<<"BFS: " << endl;
+        algo->Execute(0);
+        cout<<"DFS: " << endl;
         algo->Execute(1);
+//        cout<<"Dijkstra: " << endl;
+//        algo->Execute(2);
+
 
     }
 
-    else if (argc == 2) {
-
+    else if (argc == 4) {
+        algo->Load(graphFileName, weightFileName, positionFileName);
         //start and dest inputs from command lines
-        int start = atoi(argv[1]);
-        int end = atoi(argv[2]);
+        int start = atoi(argv[2]);
+        int end = atoi(argv[3]);
 
     }
     else {
-
         cerr << "INVALID COMMAND LINE INPUT: \n"
                 "1) ENTER NOTHING TO RUN FROM READ IN FROM LOCAL CSV FILES.\n"
                 "2) ENTER 2 INTS, THE FIRST BEING THE START NODE, AND SECOND BEING THE END NODE";
