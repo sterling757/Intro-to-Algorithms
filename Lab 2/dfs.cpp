@@ -1,75 +1,63 @@
 #include "dfs.h"
+#include <stack>
 
-//DFS::DFS(vector<BuildGraph::adjList> adjList, int totalVerts){
 
-//    this->adjacencyList = adjList;
-//    this->vertCount = totalVerts;
+DFS::DFS()
+{
 
-//}
-
-void DFS::DepthFirstSearch(int source, int destination){
-
-    vertCount += 1;
-
-    visited = new bool[vertCount];
-    int path_index = 0;
-    //DFSRecur(source, destination);
-
+}
+DFS::DFS(int num, vector<graph> vec){
+    this->numOfNodes = num;
+    this->adjToSearch = vec;
 }
 
 
-//void DFS::DFSRecur(int start, int dest){
+// utility function for finding paths in graph
+// from source to destination
+void DFS::DFSSearch(int start, int end)
+{
+    vector<int> nodePath;
+    nodePath.push_back(start);
 
-//    //cout << "PATHS PRINTING..." << endl;
-//    //string newPath = path + "->";
-//    //path[path_index] = start;
-//    //path_index++;
+    stack<vector<int> > q;
+    q.push(nodePath);
 
-//    if(start == dest){
+    bool pathFound = false;
 
-////        for(int i = 0; i < vertCount; i++)
-////            cout << path[i] << " " << endl;
-//    }
-//    else{
-//        struct BuildGraph::vertex* current = adjacencyList[start].head;
-//        list<BuildGraph::adjList>::iterator i;
+    bool hasVisited[numOfNodes];
 
-//        for(int i = 0; i < adjacencyList.size(); i++ ){
-//            if((current != 0x0)){
-//                if(current->visited == false){
-//                    DFSRecur(i, dest);
-//                }
-//            }
-//        }
-//    }
-//    //path_index--;
-//    visited[start] = false;
+    for(int i = 0; i < numOfNodes; i++){
+        hasVisited[i] = false;
+    }
 
+    while (!q.empty() && pathFound == false) {
 
-//}
+        nodePath = q.top();
+        q.pop();
 
+        int pathEnd = nodePath[nodePath.size() - 1];
 
+        if (pathEnd == end){
 
+            for (int i = 0; i < nodePath.size(); i++){
+                cout << nodePath[i] << " ";
+                this->cost += adjToSearch[nodePath[i]-1].weights[nodePath[i+1]];
+            }
 
+            pathFound = true;
+            break;
+        }
 
+        for (int i = 0; i < adjToSearch[pathEnd-1].connections.size(); i++) {
 
-//   for(int i = 0; i < vertCount+1; i++){
+            if (!hasVisited[adjToSearch[pathEnd-1].connections[i]]) {
 
-//       struct BuildGraph::vertex* current = adjacencyList[i].head;
-//       cout << "NEWWW" << "\n\n";
-//       cout << "Vertex: " << i << endl;
-//       cout << "Vertex Position (" << adjacencyList[i].xPos << "," << adjacencyList[i].yPos << "," << adjacencyList[i].zPos << ")" << endl;
+                vector<int> newPath(nodePath);
 
-//       while(current != nullptr){
-
-//           cout << "->" << current->data;
-//           current= current->next;
-
-//       }
-
-//       cout << endl;
-
-
-//   }
-
-
+                newPath.push_back(adjToSearch[pathEnd-1].connections[i]);
+                q.push(newPath);
+                hasVisited[adjToSearch[pathEnd-1].connections[i]] = true;
+            }
+        }
+    }
+}

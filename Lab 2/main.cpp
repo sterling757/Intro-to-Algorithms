@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     string positionFileName = "/home/coder/Desktop/lab22/positions.txt";
     if (argc == 1) {
         algo->Load(graphFileName, weightFileName, positionFileName);
-        algo->Execute(0);
+        algo->Execute(1);
 
     }
 

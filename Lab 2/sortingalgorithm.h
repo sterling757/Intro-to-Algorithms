@@ -61,6 +61,7 @@ protected:
 
 private:
     class BFS* bfs;
+    class DFS* dfs;
     void LoadAdjListGraph(string, string, string);
 
 };

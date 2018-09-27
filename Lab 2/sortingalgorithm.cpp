@@ -151,7 +151,7 @@ void SortingAlgorithm::Execute(int algoId) {
 
               auto start = std::chrono::steady_clock::now();
 
-              bfs->BFSSearch(1,10);
+              bfs->BFSSearch(1,16);
               auto end = std::chrono::steady_clock::now();
               auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
               //cout << taken << " milliseconds";
@@ -164,6 +164,18 @@ void SortingAlgorithm::Execute(int algoId) {
 //            }
 
 
+    }
+    else if(algoId == 1){
+        dfs = new DFS(vCount, adj);
+
+        auto start = std::chrono::steady_clock::now();
+
+        dfs->DFSSearch(1,16);
+        auto end = std::chrono::steady_clock::now();
+        auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+        //cout << taken << " milliseconds";
+        int c = dfs->getCost();
+        cout << "COST: " << c << endl;
     }
 
 }
@@ -204,6 +216,7 @@ void SortingAlgorithm::Configure(){
 
 SortingAlgorithm::~SortingAlgorithm(){
     delete[] bfs;
+    delete[] dfs;
 }
 //builder stuff
 //void SortingAlgorithm::setExecutionType(SortingAlgorithm::Configuration exe) {

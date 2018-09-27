@@ -1,28 +1,25 @@
+
 #ifndef DFS_H
 #define DFS_H
+
 
 #include "sortingalgorithm.h"
 
 class DFS
 {
+public:
 
-    public:
-        //vector<BuildGraph::adjList> adjacencyList;
+    DFS();
+    DFS(int, vector<graph>);
+    vector<graph> adjToSearch;
+    int numOfNodes = 0;
+    void DFSSearch(int start, int end);
+    int getCost(){
+        return cost;
+    }
 
-        DFS(){}
-        //DFS(vector<BuildGraph::adjList>, int);
-
-        void DepthFirstSearch(int source, int destination);
-
-    private:
-        //string path = "";
-        //for path array
-        int* path;
-        //for array
-        bool *visited;
-
-        int vertCount;
-        void DFSRecur(int start, int dest);
+private:
+    int cost;
 };
 
 #endif // DFS_H
