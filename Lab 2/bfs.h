@@ -18,8 +18,14 @@ public:
         return cost;
     }
 
+    void setPath(vector<int> path);
+    vector<int> getPath();
+    vector<int> p;
+    int getExpNodeCount();
+
 private:
     int cost = 0;
+    int expNodeCount = 0;
 };
 
 #endif // BFS_H

@@ -11,27 +11,40 @@ using namespace std;
 int main(int argc, char *argv[]) {
 
     Algorithm *algo = new SortingAlgorithm();
-    string graphFileName = "/home/coder/Desktop/lab22/graph.txt";
-    string weightFileName = "/home/coder/Desktop/lab22/weights.txt";
-    string positionFileName = "/home/coder/Desktop/lab22/positions.txt";
 
     if (argc == 1) {
-        algo->Load(graphFileName, weightFileName, positionFileName);
-        cout<<"BFS: " << endl;
-        algo->Execute(0);
-        cout<<"DFS: " << endl;
-        algo->Execute(1);
-//        cout<<"Dijkstra: " << endl;
-//        algo->Execute(2);
 
+        for(int i = 0; i < 2; i++){
+
+            //input files are located in algo->load().cpp
+            algo->Load();
+            algo->Select(i);
+            algo->Execute();
+            algo->Display();
+            algo->Save();
+
+        }
 
     }
 
-    else if (argc == 4) {
-        algo->Load(graphFileName, weightFileName, positionFileName);
+    else if (argc == 3) {
+        int start = atoi(argv[1]);
+        int end = atoi(argv[2]);
+        for(int i = 0; i < 2; i++){
+
+            //input files are located in algo->load().cpp
+            algo->Load();
+            algo->Select(i);
+            algo->Execute(start, end);
+            algo->Display();
+
+        }
+
+
+
         //start and dest inputs from command lines
-        int start = atoi(argv[2]);
-        int end = atoi(argv[3]);
+
+
 
     }
     else {
@@ -43,32 +56,6 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-    /*
-
-    string outPath = "results.txt";
-    algo->Save(outPath);
-
-    builder
-
-    SortingAlgorithm * factoryAlgo = (SortingAlgorithm *)(algoFactory::Create(algoFactory::SEARCH));
-
-    factoryAlgo->setExecutionType(SortingAlgorithm::Configuration::ITERATIVE);
-    factoryAlgo->setStorageType(SortingAlgorithm::Configuration::MATRIX);
-    factoryAlgo->Select(SortingAlgorithm::SortingAlgorithms::BUBBLE);
-    factoryAlgo->getConfig();
-
-    Sort *protoAlgo = (Sort *)(factoryAlgo->Clone());
-    protoAlgo->getConfiguration();
-
-
-    SortingAlgorithm * factoryAlgo = (SortingAlgorithm*)(AlgoFactory::Create(AlgoFactory::type));
-    factoryAlgo.setExecutionType(SortingAlgorithm::Configuration::ITERATIVE);
-
-    SortingAlgorithm * factoryAlgo = (SortingAlgorithm *)(AlgoFactory::Create(AlgoFactory::S))
-
-
-    return 0;
-*/
 
 
 

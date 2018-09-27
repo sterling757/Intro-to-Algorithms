@@ -8,13 +8,18 @@
 #include <chrono>
 #include <typeinfo>
 #include <thread>
+#include <tuple>
 
 SortingAlgorithm::SortingAlgorithm(){
 
 }
 
-//vector<BuildGraph::adjList> graph;
-void SortingAlgorithm::Load(string graphFileName, string weightsFileName, string positionsFileName) {
+
+void SortingAlgorithm::Load() {
+
+    string graphFileName = "/home/coder/Desktop/lab22/graph.txt";
+    string weightsFileName = "/home/coder/Desktop/lab22/weights.txt";
+    string positionsFileName = "/home/coder/Desktop/lab22/positions.txt";
 
     LoadAdjListGraph(graphFileName, weightsFileName, positionsFileName);
 
@@ -163,21 +168,31 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
     //adjGraph->printAdjList();
     //graph = adjGraph->adjacencyList;
 
-void SortingAlgorithm::Execute(int algoId) {
+void SortingAlgorithm::Execute() {
 
     //DFS Search
 
     if(algoId == 0){
-              bfs = new BFS(vCount, adj);
+        this->algoID = algoId;
+        bfs = new BFS(vCount, adj);
 
-              auto start = std::chrono::steady_clock::now();
+        auto start = std::chrono::system_clock::now();
+        bfs->BFSSearch(1, 5);
 
-              bfs->BFSSearch(1,6);
-              auto end = std::chrono::steady_clock::now();
-              auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-              //cout << taken << " milliseconds";
-              long int c = bfs->getCost();
-              cout << "COST: " << c << endl;
+        auto end = std::chrono::system_clock::now();
+        auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        this-> time = taken;
+
+        this-> cost = bfs->getCost();
+
+        this->path = bfs->getPath();
+
+        this-> numberOfNodes = path.size();
+
+        this-> expNodes = bfs->getExpNodeCount();
+
+        this-> distance = 0;
 
 
 //                statsStrings.push_back(p);
@@ -187,15 +202,29 @@ void SortingAlgorithm::Execute(int algoId) {
 
     }
     else if(algoId == 1){
+
+        this->algoID = algoId;
         dfs = new DFS(vCount, adj);
 
-        auto start = std::chrono::steady_clock::now();
-        dfs->DFSSearch(6,1);
-        auto end = std::chrono::steady_clock::now();
+        auto start = std::chrono::system_clock::now();
+        dfs->DFSSearch(1, 5);
+
+        auto end = std::chrono::system_clock::now();
         auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-        //cout << taken << " milliseconds";
-        long int c = dfs->getCost();
-        cout << "COST: " << c << endl;
+
+        this-> time = taken;
+
+
+        this-> cost = dfs->getCost();
+        this->path = dfs->getPath();
+
+        this-> numberOfNodes = path.size();
+
+        this-> expNodes = dfs->getExpNodeCount();
+
+        this-> distance = 0;
+
+
     }
     else if(algoId == 2){
 
@@ -205,40 +234,170 @@ void SortingAlgorithm::Execute(int algoId) {
         dijk->dijkstrasAlgo(1,5);
         auto end = std::chrono::steady_clock::now();
         auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-        //cout << taken << " milliseconds";
-//        long int c = dfs->getCost();
-//        cout << "COST: " << c << endl;
+
     }
 
 
 }
 
+void SortingAlgorithm::Execute(int source, int end){
+
+    if(algoId == 0){
+        this->algoID = algoId;
+        bfs = new BFS(vCount, adj);
+
+        auto start = std::chrono::system_clock::now();
+        bfs->BFSSearch(source, end);
+
+        auto end = std::chrono::system_clock::now();
+        auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        this-> time = taken;
+
+        this-> cost = bfs->getCost();
+
+        this->path = bfs->getPath();
+
+        this-> numberOfNodes = path.size();
+
+        this-> expNodes = bfs->getExpNodeCount();
+
+        this-> distance = 0;
+
+
+//                statsStrings.push_back(p);
+
+//            }
+
+
+    }
+    else if(algoId == 1){
+
+        this->algoID = algoId;
+        dfs = new DFS(vCount, adj);
+
+        auto start = std::chrono::system_clock::now();
+        dfs->DFSSearch(source, end);
+
+        auto end = std::chrono::system_clock::now();
+        auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        this-> time = taken;
+
+
+        this-> cost = dfs->getCost();
+        this->path = dfs->getPath();
+
+        this-> numberOfNodes = path.size();
+
+        this-> expNodes = dfs->getExpNodeCount();
+
+        this-> distance = 0;
+
+
+    }
+    else if(algoId == 2){
+
+        dijk = new Dijkstra(vCount, adj);
+
+        auto start = std::chrono::steady_clock::now();
+        dijk->dijkstrasAlgo(source, end);
+        auto end = std::chrono::steady_clock::now();
+        auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    }
+}
+
 void SortingAlgorithm::Display(){
 
+    cout << "PATH FOR ALGO: ";
+            if(algoId == 0){
+                cout << "BFS" << endl;
+            }
+            else if(algoId == 1){
+                cout << "DFS" << endl;
+            }
+            else if(algoId == 2){
+                cout << "DIJKSTRA" << endl;
+            }
+            else if(algoId == 3){
+                cout << "A*" << endl;
+            }
+            else
+                cout << "INVALID ALGO ID!" << endl;
+            for(int i = 0; i < path.size(); i++){
+                   cout << path[i] << " ";
+            }
+            cout << endl;
 
 }
 
 void SortingAlgorithm::Stats(){
 
+    cout << "STATS FOR ALGO: ";
+    if(algoID == 0){
+        cout << "BFS" << endl;
+    }
+    else if(algoID == 1){
+        cout << "DFS" << endl;
+    }
+    else if(algoID == 2){
+        cout << "DIJKSTRA" << endl;
+    }
+    else if(algoID == 3){
+        cout << "A*" << endl;
+    }
+    else
+        cout << "INVALID ALGO ID!" << endl;
+
+    cout << "PATH: " ;
+    for(int i = 0; i < path.size(); i++){
+           cout << path[i] << " ";
+    }
+    cout << endl;
+
+    cout << "NUMBER OF NODES IN PATH: " << numberOfNodes << endl;
+    cout << "COST FOR RETURNED PATH: " << cost << endl;
+    cout << "DISTANCE TRAVELED IN PATH: " << distance << endl;
+    cout << "NUMBER OF NODES EXPLORED WHICH SEARCHING FOR PATH: " << expNodes << endl;
+    cout << "TOTAL TIME TO FIND THE PATH: " << time << endl << endl;
 
 }
 
 //When using Select, input 1
-void SortingAlgorithm::Select(int algoId){
+void SortingAlgorithm::Select(int selector){
+
+    if(selector == 0){
+        this->algoID = 0;
+    }
+    else if(selector == 1){
+        this->algoID = 1;
+    }
+    else if(selector == 2){
+        this->algoID = 2;
+    }
+    else if(selector == 3){
+        this->algoID = 3;
+    }
+    else
+        cerr<<"INVALID SELECTOR" << endl;
 
 
 }
 
 
-void SortingAlgorithm::Save(string filePath){
-
-    fstream file;
-    vector<int> tempvec;
-    file.open(filePath, fstream::out);
+void SortingAlgorithm::Save(){
 
 
+    ofstream out("paths.txt");
+    out << "PATH FOR ALGO: ";
+    for(int i = 0; i < path.size(); i++){
+           out << path[i] << "->";
+    }
+    out << endl;
 
-    file.close();
+    out.close();
+
 }
 
 void SortingAlgorithm::Configure(){

@@ -26,31 +26,14 @@ public:
     SortingAlgorithm();
     ~SortingAlgorithm();
 
-    void Load(string, string, string) override;
-    void Execute(int) override;
+    void Load() override;
+    void Execute() override;
+    void Execute(int, int) override; //overridden for cmd input
     void Display() override; //Prints solution to screen
     void Stats() override; //Prints algorithm name, execution time and number of records analyzed to screen in readable format
     void Select(int) override; //enum or int or id passed as input and loads corresponding algorithm to interface
-    void Save(string filePath) override;
+    void Save() override;
     void Configure() override; //Future Expandability
-
-
-
-
-    //builder
-//    enum Configuration {
-//        RECURSIVE = 0,
-//        ITERATIVE
-//    };
-//    void setExecutionType(SortingAlgorithm::Configuration exe);
-//    void setStorageType(SortingAlgorithm::Configuration stg);
-//
-//    void getConfig();
-
-//    SortingAlgorithm(const SortingAlgorithm & srt);
-    //end Builder
-
-
 
 protected:
 
@@ -65,6 +48,15 @@ private:
     class DFS* dfs;
     class Dijkstra* dijk;
     void LoadAdjListGraph(string, string, string);
+    int algoID = 0;
+    vector<int> path = {};
+    int numberOfNodes = 0;
+    int cost = 0;
+    int distance = 0;
+    int expNodes = 0;
+    double time = 0.0;
+    int algoId = 0;
+
 
 };
 

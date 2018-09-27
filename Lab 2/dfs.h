@@ -14,12 +14,16 @@ public:
     vector<BuildGraph> adjToSearch;
     long int numOfNodes = 0;
     void DFSSearch(int , int );
-    int getCost(){
-        return cost;
-    }
-
+    int getCost();
+    void setPath(vector<int> path);
+    vector<int> getPath();
+    vector<int> p;
+    int getExpNodeCount();
+    void DFSRecur(int, int);
+    void DFSRecurCall(int start, int end, list<BuildGraph>& path, vector<bool>& disc);
 private:
     int cost = 0;
+    int expNodeCount = 0;
 };
 
 #endif // DFS_H

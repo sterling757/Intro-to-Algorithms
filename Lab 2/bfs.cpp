@@ -12,6 +12,22 @@ BFS::BFS(int num, vector<BuildGraph> vec){
 }
 
 
+void BFS::setPath(vector<int> path){
+    this->p = path;
+
+}
+
+vector<int> BFS::getPath(){
+
+    return this->p;
+}
+
+
+
+int BFS::getExpNodeCount(){
+    return expNodeCount;
+}
+
 // utility function for finding paths in graph
 // from source to destination
 void BFS::BFSSearch(int start, int end)
@@ -38,9 +54,9 @@ void BFS::BFSSearch(int start, int end)
         int pathEnd = nodePath[nodePath.size() - 1];
 
         if (pathEnd == end){
+            setPath(nodePath);
+            for (int i = 0; i < nodePath.size()-1; i++){
 
-            for (int i = 0; i < nodePath.size(); i++){
-                cout << nodePath[i] << " ";
                 this->cost += adjToSearch[nodePath[i]-1].weights[nodePath[i+1]];
             }
 
@@ -56,6 +72,7 @@ void BFS::BFSSearch(int start, int end)
                 newPath.push_back(adjToSearch[pathEnd-1].connections[i]);
                 q.push(newPath);
                 hasVisited[adjToSearch[pathEnd-1].connections[i]] = true;
+                expNodeCount++;
             }
         }
     }
