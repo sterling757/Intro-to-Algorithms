@@ -2,45 +2,19 @@
 #define BUILDGRAPH_H
 
 #include "sortingalgorithm.h"
+#include <map>
 
-class BuildGraph {
+struct graph{
 
-
-    private:
-
-        int numOfVerts;
-
-
-    public:
-
-
-        struct vertex{
-            bool visited;
-            int weight;
-            int data;
-
-            struct vertex* next;
-        };
-
-        struct adjList{
-            struct vertex *head;
-            int xPos;
-            int yPos;
-            int zPos;
-        };
-
-
-        BuildGraph();
-        BuildGraph(int vertices);
-        vertex* addVertex(int);
-        void addEdge(int, int);
-        void addWeight(int, int, int);
-        void addPositions(int, int, int, int);
-        void printAdjList();
-        vector<adjList> adjacencyList;
-        ~BuildGraph();
-
-
+    int name;
+    vector<int> connections;
+    map<int,int> weights;
+    int xPos;
+    int yPos;
+    int zPos;
 
 };
+
+
+
 #endif // BUILDGRAPH_H

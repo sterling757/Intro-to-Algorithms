@@ -5,18 +5,18 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     sortingalgorithm.cpp \
-    buildgraph.cpp \
-    dfs.cpp
+    dfs.cpp \
+    bfs.cpp
 
 HEADERS += \
     algorithm.h \
     sortingalgorithm.h \
     buildgraph.h \
-    dfs.h
+    dfs.h \
+    bfs.h
 
 
 DISTFILES += \
     graph.txt \
     positions.txt \
     weights.txt
-
