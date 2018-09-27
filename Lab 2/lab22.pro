@@ -19,4 +19,7 @@ HEADERS += \
 DISTFILES += \
     graph.txt \
     positions.txt \
-    weights.txt
+    weights.txt \
+    largeGraph.txt \
+    largePositions.txt \
+    largeWeights.txt

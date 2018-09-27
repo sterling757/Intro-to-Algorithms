@@ -57,10 +57,7 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
             getline(graphFile2, line, ',');
             getline(graphFile2, connectedNodes, '\n');
 
-            startNode = stoi(line);
-
-
-            //cout << "Node: " << startNode << " is connected to Node(s): " << connectedNodes << endl;
+            startNode = stol(line);
 
             stringstream ss(connectedNodes);
 
@@ -101,34 +98,17 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
            getline(weightFile, destinationNode, ',');
            getline(weightFile, weight, '\n');
 
-           int start = stoi(originalNode);
-           int end = stoi(destinationNode);
-           int w = stoi(weight);
+           int start = stol(originalNode);
+           int end = stol(destinationNode);
+           int w = stol(weight);
 
-//           map<int,int> temp ;
-//           temp.insert(pair<int,int>(end,w));
+
            adj[start-1].weights.insert(pair<int,int>(end,w));
-//           for(int i = 0; i < adjList.size(); i++){
-//               //cout << "Vertex: " << i << endl;
-
-//                   if (start == adjList[i]){
-//                        adjList[i].weight = build.addWeight();
-
-//                   }
-//               }
-
-//           }
-           //cout << adjList[start-1].weight.size() << endl;
-
-
-
-           //adjList[start-1].weight = ;
 
     }
     weightFile.close();
 
 //    //opens and reads positions(x,y,z)
-
 
     string node;
     string xPos;
@@ -142,10 +122,10 @@ void SortingAlgorithm::LoadAdjListGraph(string graphFileName, string weightPath,
         getline(positionFile, yPos, ',');
         getline(positionFile, zPos, '\n');
 
-        int n = stoi(node);
-        int x = stoi(xPos);
-        int y = stoi(yPos);
-        int z = stoi(zPos);
+        int n = stol(node);
+        int x = stol(xPos);
+        int y = stol(yPos);
+        int z = stol(zPos);
 
 
         //adjGraph->addPositions(n, x, y, z);
@@ -169,29 +149,15 @@ void SortingAlgorithm::Execute(int algoId) {
     if(algoId == 0){
               bfs = new BFS(vCount, adj);
 
-
-
               auto start = std::chrono::steady_clock::now();
 
-              bfs->BFSSearch(1,15);
+              bfs->BFSSearch(1,10);
               auto end = std::chrono::steady_clock::now();
               auto taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-              cout << taken << " milliseconds";
-//            dfsSearch = new DFS(graph, vCount);
-//            dfsSearch->DepthFirstSearch(1,5);
-//            for (int i = 0; i < nums.size(); i++) {
+              //cout << taken << " milliseconds";
+              int c = bfs->getCost();
+              cout << "COST: " << c << endl;
 
-//
-
-//                bs.Sort(nums[i]);
-
-//                auto end = std::chrono::high_resolution_clock::now();
-
-//
-
-//                int size = nums[i].size();
-
-//                pair <int,double> p (size,ms);
 
 //                statsStrings.push_back(p);
 

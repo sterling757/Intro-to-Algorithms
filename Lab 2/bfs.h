@@ -12,9 +12,13 @@ public:
     BFS(int, vector<graph>);
     vector<graph> adjToSearch;
     int numOfNodes = 0;
-    int isNotVisited(int , vector<int>& );
     void BFSSearch(int start, int end);
-    void printPath(vector<int>&);
+    int getCost(){
+        return cost;
+    }
+
+private:
+    int cost;
 };
 
 #endif // BFS_H

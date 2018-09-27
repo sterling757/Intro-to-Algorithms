@@ -1,7 +1,7 @@
 #include "bfs.h"
 #include <queue>
 
-const int imax = std::numeric_limits<int>::max();
+
 BFS::BFS()
 {
 
@@ -11,51 +11,51 @@ BFS::BFS(int num, vector<graph> vec){
     this->adjToSearch = vec;
 }
 
-int BFS::isNotVisited(int x, vector<int>& path)
-{
-    int size = path.size();
-    for (int i = 0; i < size; i++)
-        if (path[i] == x)
-            return 0;
-    return 1;
-}
 
 // utility function for finding paths in graph
 // from source to destination
-void BFS::BFSSearch(int src, int dst)
+void BFS::BFSSearch(int start, int end)
 {
-    // create a queue which stores
-    // the paths
-    queue<vector<int> > q;
+    vector<int> nodePath;
+    nodePath.push_back(start);
 
-    // path vector to store the current path
-    vector<int> path;
-    path.push_back(src);
-    q.push(path);
+    queue<vector<int> > q;
+    q.push(nodePath);
+
     bool pathFound = false;
 
-    while (!q.empty() && pathFound == false) {
-        path = q.front();
-        q.pop();
-        int last = path[path.size() - 1];
+    bool hasVisited[numOfNodes];
 
-        // if last vertex is the desired destination
-        // then print the path
-        if (last == dst){
-            int size = path.size();
-            for (int i = 0; i < size; i++)
-                cout << path[i] << " ";
-            cout << endl;
+    for(int i = 0; i < numOfNodes; i++){
+        hasVisited[i] = false;
+    }
+
+    while (!q.empty() && pathFound == false) {
+
+        nodePath = q.front();
+        q.pop();
+
+        int pathEnd = nodePath[nodePath.size() - 1];
+
+        if (pathEnd == end){
+
+            for (int i = 0; i < nodePath.size(); i++){
+                cout << nodePath[i] << " ";
+                this->cost += adjToSearch[nodePath[i]-1].weights[nodePath[i+1]];
+            }
+
             pathFound = true;
         }
 
-        // traverse to all the nodes connected to
-        // current vertex and push new path to queue
-        for (int i = 0; i < adjToSearch[last-1].connections.size(); i++) {
-            if (isNotVisited(adjToSearch[last-1].connections[i], path)) {
-                vector<int> newpath(path);
-                newpath.push_back(adjToSearch[last-1].connections[i]);
-                q.push(newpath);
+        for (int i = 0; i < adjToSearch[pathEnd-1].connections.size(); i++) {
+
+            if (!hasVisited[adjToSearch[pathEnd-1].connections[i]]) {
+
+                vector<int> newPath(nodePath);
+
+                newPath.push_back(adjToSearch[pathEnd-1].connections[i]);
+                q.push(newPath);
+                hasVisited[adjToSearch[pathEnd-1].connections[i]] = true;
             }
         }
     }
